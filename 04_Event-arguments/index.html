@@ -21,13 +21,31 @@
       <!-- nelle parentesi di può passare un numero
         vue in js interpreta il numero scritto in v-on come parametro -->
       <button v-on:click="addCounter(5)">Add 5</button>
+      <!-- modifier che fa funzionare il button al click sul destro -->
+      <!-- <button v-on:click.right="reduceCounter(5)">Reduce 5</button> -->
       <button v-on:click="reduceCounter(5)">Reduce 5</button>
+      <!-- v-once serve a preservare lo stato di un elemento -->
+      <p v-once>Starting counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
       <!-- v-on input serve a dire a js di ascoltare -->
       <!-- questo input event in qeusto input element -->
       <!-- si può specificare il codice nelle virgolette -->
-      <input type="text" v-on:input="setName($event, 'Pallino')">
-      <p>Your name: {{ name }}</p>
+      <!-- far funzionare al press su invio -->
+      <!-- il punto in keyup è per specificare a vue solo il momento in cui agire -->
+      <input
+        type="text" 
+        v-on:input="setName($event, 'Pallino')"
+        v-on:keyup.enter="confirmInput"
+      >
+      <p>Your name: {{ confirmedName }}</p>
+      <!-- v-on ascolta i form -->
+      <!-- il punto aggiunge il modifier -->
+      <!-- ci sono pochi modifier -->
+      prevent evita il browser default del refresh al click
+      <form v-on:submit.prevent="submitForm">
+        <input type="text">
+        <button style="margin-top: 10px;">Sign up</button>
+      </form>
     </section>
   </body>
 </html>

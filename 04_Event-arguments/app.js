@@ -4,7 +4,8 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ''
+      name: '',
+      confirmedName: ''
     };
   },
   //scrivere la funzione in methods invece che in v-on
@@ -21,6 +22,18 @@ const app = Vue.createApp({
     setName(event, lastName){
       // name nei data
       this.name = event.target.value + ' ' + lastName;
+    },
+    submitForm(event){
+      //ja indipendente da vue
+      //blocca il refresh del browser al click su submit
+      // event.preventDefault();
+      
+      alert('Submitted!');
+    },
+    // funzione per passare il nome al presso su invio
+    confirmInput(){
+      // confermato è uguale a name
+      this.confirmedName = this.name;
     }
   },
 });
