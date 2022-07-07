@@ -15,7 +15,7 @@
       <h1>Vue Course Goals</h1>
     </header>
     <section id="user-goal">
-      <h2>My Course Goal</h2>
+      <h3>My Course Goal</h2>
 
       <!-- vue collega il {{}} alla proprietà in js/data -->
       <!-- se stampato fuori da id montato in vue viene preso come testo -->
@@ -24,7 +24,7 @@
       <!-- per passare link dinamico usare v-bind -->
       <!-- dice di settare(bind) il valore di qualcosa -->
       <!-- senza {{}} -->
-      <p>Learn more <a v-bind:href="vueLink">about Vue</a>!</p>
+      <p>Learn more  <a v-bind:href="vueLink">about Vue</a>!</p>
 
       <!-- si può richiamare il metodo direttamente in html -->
       <!-- con parentesi come il js normale -->
@@ -32,6 +32,11 @@
       <!-- <p>{{1+1}}</p> -->
       <!-- <p>{{Math.random}}</p> -->
       <p>{{ outputGoal() }}</p>
+
+      <!-- con v-html si dice a vue di interpretare la stringa in data come html -->
+      <!-- si passa tra virgolette e non con graffe -->
+      <p v-html="outputGoalC"></p>
+      <p>{{ courseGoalC }}</p>
     </section>
 
     <script src="https://unpkg.com/vue@next" defer></script>
