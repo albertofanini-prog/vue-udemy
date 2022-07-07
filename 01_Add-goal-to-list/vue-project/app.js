@@ -20,6 +20,7 @@ Vue.createApp({
         addGoal(){
             //pusha array ricevuto da input in array goals
             this.goals.push(this.enteredValue);
+            this.enteredValue = '';
         }
 
     }
