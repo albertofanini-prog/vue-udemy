@@ -14,14 +14,14 @@ const app = Vue.createApp({
         // 5 - dichiarare un identifier
         boxSelected(box){
             if (box === 'A'){
-                this.boxAselected = true;
+                this.boxAselected = !this.boxASelected;
             } else if (box === 'B'){
-                this.boxBselected = true;
+                this.boxBselected = !this.boxBSelected;
             } else if (box === 'C'){
-                this.boxCselected = true;
-            }
-        }
-    }
+                this.boxCselected = !this.boxCSelected;
+            };
+        },
+    },
 });
 
 app.mount('#styling');
