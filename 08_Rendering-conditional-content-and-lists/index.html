@@ -31,7 +31,12 @@
         <!-- 8 - v-for ciclo for -->
         <!-- puntare all'array in data -->
         <!-- 9 - V-for accetta più parametri -->
-        <li v-for="(goal, index) in goals">{{ goal }} - {{ index }}</li>
+        <li 
+          v-for="(goal, index) in goals" 
+          @click="removeGoal(index)"
+        >
+        {{ index }} - {{ goal }}
+        </li>
       </ul>
       <!-- 7 - Si può usare anche v-show. V-show aggiunge display none 
       mentre v-if v-else rimuovono completamente l'elemento dal dom-->
