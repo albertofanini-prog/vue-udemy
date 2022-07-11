@@ -2,19 +2,33 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ''
+      name: '',
+      fullName: '',
     };
+  },
+  // watch è un object
+  // qui si può usare un parametro come data o computed
+  // da definire come metodo nei watch
+  // quando la proprietà cambia
+  // watcher viene reseguito 
+  watch:{
+    name(){
+      // non si ritorna nulla perchè watcher non si usa in html
+      // si specificano cose da eseguire quando il data cambia (name in questo caso)
+      this.fullName = this.name + ' ' + 'Pallino'
+    }
+
   },
   // Computed ritornano un Object
   // qui si definiscono dei metodi come in methods
   // ma methods e computed sono eseguiti in modo diverso
   computed: {
-    fullName(){
-      if (this.name === ''){
-        return '';
-      }
-      return this.name + ' ' + 'Pallino'
-    }
+    // fullName(){
+    //   if (this.name === ''){
+    //     return '';
+    //   }
+    //   return this.name + ' ' + 'Pallino'
+    // }
   },
   methods: {
     // metodo per fare output di full name
