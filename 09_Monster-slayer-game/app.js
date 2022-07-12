@@ -19,7 +19,8 @@ const app = Vue.createApp({
             monsterHealth: 100,
             currentRound: 0,
             // settare win su null
-            winner: null
+            winner: null,
+            logMessages: [],
         }
     },
     computed: {
@@ -67,20 +68,20 @@ const app = Vue.createApp({
             this.currentRound++;
             const attackValue = getRandomValue(5, 12);
             this.monsterHealth -= attackValue;
+            this.addLogMessage('player', 'attack', attackValue)
             this.attackPlayer();
-            if(this.playerHealth < 0){
-                // player lost
-            }
         },
         attackPlayer(){
             const attackValue = getRandomValue(8, 15);
             this.playerHealth -= attackValue;
+            this.addLogMessage('monster', 'attack', attackValue)
         },
         //disponibile ogni 3 round
         specialAttackMonster(){
             this.currentRound++;
             const attackValue = getRandomValue(10, 25);
             this.monsterHealth -= attackValue;
+            this.addLogMessage('player', 'special attack', attackValue)
             this.attackPlayer();
         },
         healPlayer(){
@@ -93,6 +94,7 @@ const app = Vue.createApp({
             } else{
                 this.playerHealth += healValue;
             }
+            this.addLogMessage('player', 'heal', healValue)
             this.attackPlayer();
         },
         startGame(){
@@ -105,6 +107,16 @@ const app = Vue.createApp({
         surrender(){
             this.winner = 'monster';
             this.playerHealth = 0;
+        },
+        // who do something
+        // what he does
+        // value
+        addLogMessage(who, what, value){
+            this.logMessages.unshift({
+                actionBy: who,
+                actionType: what,
+                actionValue: value
+            });
         }
     }
 });
