@@ -36,6 +36,12 @@
           ></div>
         </div>
       </section>
+      <section class="container" v-if="winner">
+        <h2>Game Over!</h2>
+        <h3 v-if="winner === 'monster'">You lost!</h3>
+        <h3 v-else-if="winner === 'player'"></h3>>You won!</h3>
+        <h3 v-else></h3>>Draw!</h3>
+      </section>
       <section id="controls">
         <button @click="attackMonster">ATTACK</button>
         <!-- se il numero è divisibile per tre significa che siamo ogni tre round -->
@@ -46,7 +52,7 @@
         >
           SPECIAL ATTACK
         </button>
-        <button>HEAL</button>
+        <button @click="healPlayer">HEAL</button>
         <button>SURRENDER</button>
       </section>
       <section id="log" class="container">
