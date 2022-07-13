@@ -46,7 +46,7 @@
       <section id="controls" v-else>
         <button @click="attackMonster">ATTACK</button>
         <!-- se il numero è divisibile per tre significa che siamo ogni tre round -->
-          <!-- :disabled="currentRound % 3 !== 0" -->
+        <!-- :disabled="currentRound % 3 !== 0" -->
         <button
           @click="specialAttackMonster"
           :disabled="mayUseSpecialAttack"
@@ -67,7 +67,7 @@
               Heals himself for <span class="log--heal">{{ message.actionValue }}</span>
             </span>
             <span v-else>
-              Attacks and deals <span class="log--damage">{{ message.actionValue }}/100</span>
+              Attacks and deals <span class="log--damage">{{ message.actionValue }} /100</span>
             </span>
           </li>
         </ul>
