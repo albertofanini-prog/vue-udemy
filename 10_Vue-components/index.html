@@ -9,8 +9,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@next" defer></script>
-    <script src="app.js" defer></script>
   </head>
   <body>
     <header>
@@ -20,13 +18,17 @@
       <ul>
         <li v-for="friend in friends" :key="friend.id">
           <h2>{{friend.name}}</h2>
-          <button>Show Details</button>
-          <ul>
+          <button @click="toggleDetails(friend.id)">
+            {{detailsAreVisibile ? 'Hide' : 'Show'}} Details
+          </button>
+          <ul v-if="detailsAreVisibile">
             <li><strong>Phone:</strong> {{friend.phone}}</li>
             <li><strong>Email:</strong> {{friend.email}}</li>
           </ul>
         </li>
       </ul>
     </section>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
   </body>
 </html>
