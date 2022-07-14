@@ -8,12 +8,14 @@
             name="Alberto"
             phone-number="9876 54321"
             email-address="alb@host.it"
+            is-favourite="1"
             ></friend-contact>
 
             <friend-contact
-            name="Giuglielmo"
+            name="Guglielmo"
             phone-number="1234 85679"
             email-address="gug@host.it"
+            is-favourite="0"
             ></friend-contact>
         </ul>
     </section>
