@@ -13,3 +13,11 @@ I componenti devono essere multi world così da non essere interpetrati come tag
 Popolare i data.
 Passare i data al template.
 Creare metodo necessario, passarlo a @click corrispondente
+
+<!-- 5 -->
+PROPS
+funzione Vue per fare store dei data in html
+cosa definiamo in props sarà disponibile come nei data, dentro al componente
+possiamo riferirici a esse nel method
+props deve avere stesso nome di data properties così da poterlo passare senza speicficare il nome dell oggetto. {{name}} invece di {{friend.name}}
+I props vanno dichiarati nel tag del componente come attributi html e in kebab case
