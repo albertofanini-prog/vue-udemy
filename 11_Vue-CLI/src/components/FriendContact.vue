@@ -23,12 +23,21 @@
 
 <script>
 export default {
-  props: [
-    'name',
-    'phoneNumber',
-    'emailAddress',
-    'isFavourite'
-  ],
+  // props: [
+  //   'name',
+  //   'phoneNumber',
+  //   'emailAddress',
+  //   'isFavourite'
+  // ],
+  props: {
+    name: {
+      type: String,
+      required: true
+    },
+    phoneNumber: String,
+    emailAddress: String,
+    isFavourite: String,
+  },
   data(){
     return{
       detailsAreVisible: false,
