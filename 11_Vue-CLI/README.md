@@ -21,3 +21,8 @@ cosa definiamo in props sarà disponibile come nei data, dentro al componente
 possiamo riferirici a esse nel method
 props deve avere stesso nome di data properties così da poterlo passare senza speicficare il nome dell oggetto. {{name}} invece di {{friend.name}}
 I props vanno dichiarati nel tag del componente come attributi html e in kebab case
+
+<!-- 6 -->
+Le props possono essere impostate come object per fare le validazioni e assicurarsi che quel dato sia di un certo tipo.
+Ogni proprità può esere un oggetto con varie validazioni ad es required, default,  ecc.
+String | Number | Boolean | Array | Object | Date |Function | Symbol
