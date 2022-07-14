@@ -2,7 +2,7 @@
     <li>
         <h2>
           {{ name }}
-          {{ friendIsFavourite === '1' ? '(Favourite)' : ''}}  
+          {{ friendIsFavourite ? '(Favourite)' : ''}}  
         </h2>
 
         <button @click="toggleDetails"> 
@@ -10,8 +10,7 @@
         </button>
 
         <button @click="toggleFavourite"> 
-          Add Favourite
-          {{friendIsFavourite ? 'Add' : 'Remove' }}
+          {{friendIsFavourite ? 'Add' : 'Remove' }} Favourite
         </button>
         
         <ul v-if="detailsAreVisible">
@@ -36,17 +35,24 @@ export default {
     },
     phoneNumber: String,
     emailAddress: String,
-    isFavourite: String,
+    isFavourite: {
+      type: Boolean,
+      required: false,
+      default: true,
+      // validator: function(value){
+      //   return value === '1' || value === '0';
+      // }
+    }
   },
   data(){
     return{
       detailsAreVisible: false,
-      friend: {
-        id: '0',
-        name: 'Manuel Lorenz',
-        phone: '01234 5678 991',
-        email: 'manuel@localhost.com'
-      },
+      // friend: {
+      //   id: '0',
+      //   name: 'Manuel Lorenz',
+      //   phone: '01234 5678 991',
+      //   email: 'manuel@localhost.com'
+      // },
       friendIsFavourite: this.isFavourite,
     }
   },
@@ -55,11 +61,12 @@ export default {
       this.detailsAreVisible = !this.detailsAreVisible
     },
     toggleFavourite(){
-      if (this.friendIsFavourite === '1'){
-        this.friendIsFavourite = '0';
-      } else{
-        this.friendIsFavourite = '1';
-      }
+      // if (this.friendIsFavourite === '1'){
+      //   this.friendIsFavourite = '0';
+      // } else{
+      //   this.friendIsFavourite = '1';
+      // }
+      this.friendIsFavourite = !this.friendIsFavourite;
     }
   }
 }

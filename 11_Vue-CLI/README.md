@@ -26,3 +26,9 @@ I props vanno dichiarati nel tag del componente come attributi html e in kebab c
 Le props possono essere impostate come object per fare le validazioni e assicurarsi che quel dato sia di un certo tipo.
 Ogni proprità può esere un oggetto con varie validazioni ad es required, default,  ecc.
 String | Number | Boolean | Array | Object | Date |Function | Symbol
+
+<!-- 7 -->
+per passare booleano a tag componente è necessario fare il v-bind altrimenti vue legge come stringa
+
+<!-- 8 -->
+Si può fare v-for su tag componente ma è NECESSARIA la :key=""

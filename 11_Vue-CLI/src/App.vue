@@ -5,18 +5,20 @@
         </header>
         <ul>
             <friend-contact
-            name="Alberto"
-            phone-number="9876 54321"
-            email-address="alb@host.it"
-            is-favourite="1"
+            v-for="friend in friends"
+            :key="friend.id"
+            :name="friend.name"
+            :phone-number="friend.number"
+            :email-address="friend.email"
+            :is-favourite="true"
             ></friend-contact>
 
-            <friend-contact
+            <!-- <friend-contact
             name="Guglielmo"
             phone-number="1234 85679"
             email-address="gug@host.it"
-            is-favourite="0"
-            ></friend-contact>
+            :is-favourite="true"
+            ></friend-contact> -->
         </ul>
     </section>
 </template>
@@ -26,6 +28,24 @@ import FriendContact from './components/FriendContact.vue'
 
 export default {
   components: { FriendContact },
+  data(){
+    return{
+        friends: [
+            {
+                id: '0',
+                name: 'Manuel Lorenz',
+                phone: '01234 5678 991',
+                email: 'manuel@localhost.com',
+            },
+            {
+                id: '1',
+                name: 'Lorenz Manuel',
+                phone: '01234 5678 991',
+                email: 'lorenz@localhost.com',
+            },
+        ]
+    }
+  }
 }
 </script>
 
