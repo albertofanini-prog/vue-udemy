@@ -32,3 +32,16 @@ per passare booleano a tag componente è necessario fare il v-bind altrimenti vu
 
 <!-- 8 -->
 Si può fare v-for su tag componente ma è NECESSARIA la :key=""
+
+<!-- 9 -->
+Creare il form
+Resettare le proprietà in data()
+Passarle a v-model
+Assegnare @submit.prevent al tag form
+Passare a @submit.prevent il metodo
+Il metodo deve avere $emit passando l'emit dichiarato prima dei data e i vmodel dell'input.
+Passare ad App.vue lemit
+
+<!-- 10 -->
+Scrivere $amit nei methods di app.vue
+Passare al metodo i parametri emit
