@@ -15,6 +15,7 @@
       :phone-number="friend.phone"
       :email-address="friend.email"
       :is-favourite="false"
+      @delete="deleteContact"
       ></friend-contact>
 
       <!-- <friend-contact
@@ -61,6 +62,9 @@ export default {
         isFavourite: false
       };
       this.friends.push(newFriendContact)
+    },
+    deleteContact(friendId){
+      this.friends = this.friends.filter(friend => friend.id !== friendId);
     }
   }
 }

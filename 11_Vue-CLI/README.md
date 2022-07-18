@@ -45,3 +45,14 @@ Passare ad App.vue lemit
 <!-- 10 -->
 Scrivere $amit nei methods di app.vue
 Passare al metodo i parametri emit
+
+<!-- 11 -->
+DELETE
+Aggiungere bottone
+passare @click
+nel click passare $emit
+@click="$emit('delete')
+aggiungere emit a lista emit in script
+pasare òdelete a html
+scrivere method in app vue e passare id
+passare id in component.vue

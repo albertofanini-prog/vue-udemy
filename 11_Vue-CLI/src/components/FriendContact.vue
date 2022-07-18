@@ -1,29 +1,31 @@
 <template>
-    <li>
-        <h2>
-          {{ name }}
-          {{ friendIsFavourite ? '(Favourite)' : ''}}  
-        </h2>
+  <li>
+    <h2>
+      {{ name }}
+      {{ friendIsFavourite ? '(Favourite)' : ''}}  
+    </h2>
 
-        <div class="buttons_wrapper">
-          <button @click="toggleDetails"> 
-            {{detailsAreVisible ? 'Hide' : 'Show' }} Details
-          </button>
+    <div class="buttons_wrapper">
+      <button @click="toggleDetails"> 
+        {{detailsAreVisible ? 'Hide' : 'Show' }} Details
+      </button>
 
-          <button @click="toggleFavourite"> 
-            {{friendIsFavourite ? 'Remove' : 'Add' }} Favourite
-          </button>
-        </div>
-        
-        <ul v-if="detailsAreVisible">
-          <li><strong>Phone:</strong> {{ phoneNumber }}</li>
-          <li><strong>Email:</strong> {{ emailAddress }}</li>
-        </ul>
-    </li>
+      <button @click="toggleFavourite"> 
+        {{friendIsFavourite ? 'Remove' : 'Add' }} Favourite
+      </button>
+    </div>
+    
+    <ul v-if="detailsAreVisible">
+      <li><strong>Phone:</strong> {{ phoneNumber }}</li>
+      <li><strong>Email:</strong> {{ emailAddress }}</li>
+    </ul>
+    <button @click="$emit('delete', id)">Delete</button>
+  </li>
 </template>
 
 <script>
 export default {
+    emits: ['delete'],
   // props: [
   //   'name',
   //   'phoneNumber',
@@ -69,7 +71,7 @@ export default {
       //   this.friendIsFavourite = '1';
       // }
       this.friendIsFavourite = !this.friendIsFavourite;
-    }
+    },
   }
 }
 </script>
@@ -87,6 +89,6 @@ li{
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px ;
 }
 </style>
