@@ -1,33 +1,38 @@
 <template>
-    <section>
-        <header>
-            <h1>My friends</h1>
-        </header>
-        <ul>
-            <friend-contact
-            v-for="friend in friends"
-            :key="friend.id"
-            :name="friend.name"
-            :phone-number="friend.number"
-            :email-address="friend.email"
-            :is-favourite="true"
-            ></friend-contact>
+  <section>
+    <header>
+      <h1>My friends</h1>
+    </header>
 
-            <!-- <friend-contact
-            name="Guglielmo"
-            phone-number="1234 85679"
-            email-address="gug@host.it"
-            :is-favourite="true"
-            ></friend-contact> -->
-        </ul>
-    </section>
+    <h2>Add a friend</h2>
+    <new-friend @add-contact="addContact"></new-friend>
+
+    <ul>
+      <friend-contact
+      v-for="friend in friends"
+      :key="friend.id"
+      :name="friend.name"
+      :phone-number="friend.phone"
+      :email-address="friend.email"
+      :is-favourite="false"
+      ></friend-contact>
+
+      <!-- <friend-contact
+      name="Guglielmo"
+      phone-number="1234 85679"
+      email-address="gug@host.it"
+      :is-favourite="true"
+      ></friend-contact> -->
+    </ul>
+  </section>
 </template>
 
 <script>
 import FriendContact from './components/FriendContact.vue'
+import NewFriend from './components/NewFriend.vue'
 
 export default {
-  components: { FriendContact },
+  components: { FriendContact, NewFriend },
   data(){
     return{
         friends: [
@@ -44,6 +49,18 @@ export default {
                 email: 'lorenz@localhost.com',
             },
         ]
+    }
+  },
+  methods: {
+    addContact(name, phone, email){
+      const newFriendContact = {
+        id: new Date().toISOString(),
+        name: name,
+        phone: phone,
+        email: email,
+        isFavourite: false
+      };
+      this.friends.push(newFriendContact)
     }
   }
 }
@@ -62,6 +79,10 @@ html {
 
 body {
   margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
@@ -76,10 +97,29 @@ header {
   max-width: 40rem;
 }
 
+#app{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#app section{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
 #app ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #app li {
@@ -108,6 +148,7 @@ header {
   padding: 0.05rem 1rem;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
   border-radius: 15px;
+  margin: 0 10px;
 }
 
 #app button:hover,

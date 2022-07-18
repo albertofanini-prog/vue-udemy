@@ -5,13 +5,15 @@
           {{ friendIsFavourite ? '(Favourite)' : ''}}  
         </h2>
 
-        <button @click="toggleDetails"> 
-          {{detailsAreVisible ? 'Hide' : 'Show' }} Details
-        </button>
+        <div class="buttons_wrapper">
+          <button @click="toggleDetails"> 
+            {{detailsAreVisible ? 'Hide' : 'Show' }} Details
+          </button>
 
-        <button @click="toggleFavourite"> 
-          {{friendIsFavourite ? 'Add' : 'Remove' }} Favourite
-        </button>
+          <button @click="toggleFavourite"> 
+            {{friendIsFavourite ? 'Remove' : 'Add' }} Favourite
+          </button>
+        </div>
         
         <ul v-if="detailsAreVisible">
           <li><strong>Phone:</strong> {{ phoneNumber }}</li>
@@ -73,5 +75,18 @@ export default {
 </script>
  
 <style>
+li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
 
+.buttons_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+}
 </style>
