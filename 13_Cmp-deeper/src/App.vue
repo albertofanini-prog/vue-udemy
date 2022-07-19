@@ -1,17 +1,26 @@
 <template>
   <div>
-    <the-header></the-header>
+    <TheHeader/>
     <badge-list></badge-list>
-    <user-info
+    <UserInfo
       :full-name="activeUser.name"
       :info-text="activeUser.description"
       :role="activeUser.role"
-    ></user-info>
+    />
   </div>
 </template>
 
 <script>
+import TheHeader from './components/TheHeader.vue';
+import BadgeList from './components/BadgeList.vue';
+import UserInfo from './components/UserInfo.vue';
+
 export default {
+  components: {
+    TheHeader,
+    'badge-list': BadgeList,
+    UserInfo
+  },
   data() {
     return {
       activeUser: {
@@ -25,11 +34,11 @@ export default {
 </script>
 
 <style>
-html {
+html  {
   font-family: sans-serif;
 }
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;

@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .badge {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -26,12 +26,12 @@ export default {
 }
 
 .badge--admin {
-  background-color: #810036;
+  background-color: #35495e;
   color: white;
 }
 
 .badge--author {
-  background-color: #002c8a;
+  background-color: #42b883;
   color: white;
 }
 </style>
