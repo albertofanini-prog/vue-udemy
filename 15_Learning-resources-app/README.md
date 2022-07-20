@@ -23,3 +23,7 @@ Give props to component to make it reusable
         Every props will be a string
 Provide dynamic props to html (app.vue)
     Give value to html tag component (es: :title="res.title")
+<!-- 6 -->
+Create new component for stored items
+    Pass him props
+    Register it on App.vue

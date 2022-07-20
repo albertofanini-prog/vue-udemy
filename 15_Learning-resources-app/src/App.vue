@@ -1,24 +1,18 @@
 <template>
     <div id="app">
         <h1>Learning resources app</h1>
-        <ul class="resources-container">
-            <LearningResource
-                v-for="res in storedResources"
-                :key="res.id"
-                :title="res.title"
-                :description="res.description"
-                :link="res.link"    
-            />
-        </ul>
+        <StoredResources
+            :resources="storedResources"
+        />
     </div>
 </template>
 
 <script>
-import LearningResource from './components/learning-resources/LearningResource.vue';
+import StoredResources from './components/learning-resources/StoredResources.vue';
 
 export default {
     components: {
-        LearningResource
+        StoredResources,
     },
     data(){
         return{
@@ -65,15 +59,5 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 1rem 0px;
-}
-
-.resources-container{
-    /* border: 3px solid green; */
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 1rem;
-    list-style: none;
 }
 </style>
