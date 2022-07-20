@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section class="main">
     <TheHeader/>
     <badge-list></badge-list>
     <UserInfo
@@ -7,19 +7,26 @@
       :info-text="activeUser.description"
       :role="activeUser.role"
     />
-  </div>
+    <course-goals>
+      <template #default="slotScoped">
+        <h2>{{slotScoped.scoped}}</h2>
+      </template>
+    </course-goals>
+  </section>
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue';
 import BadgeList from './components/BadgeList.vue';
 import UserInfo from './components/UserInfo.vue';
+import CourseGoals from './components/CourseGoals.vue';
 
 export default {
   components: {
     TheHeader,
     'badge-list': BadgeList,
-    UserInfo
+    UserInfo,
+    CourseGoals
   },
   data() {
     return {
@@ -47,5 +54,14 @@ html  {
 #app{
   display: flex;
   flex-direction: column;
+}
+
+.main{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 </style>
