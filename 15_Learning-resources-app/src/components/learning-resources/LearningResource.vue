@@ -1,15 +1,15 @@
 <template>
     <li class="resource">
-        <div>
+        <base-card>
             <header>
                 <h3>{{title}}</h3>
                 <button>Delete</button>
             </header>
-        </div>
-        <p>{{description}}</p>
-        <nav>
-            <a :href="link">View resource</a>
-        </nav>
+            <p>{{description}}</p>
+            <nav>
+                <a target= "_blank" :href="link">View resource</a>
+            </nav>
+        </base-card>
     </li>
 </template>
 
@@ -32,14 +32,6 @@ export default {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     }
 
-    div{
-        /* border: 3px solid green; */
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     header{
         padding: 0.4rem 0px;
         width: 100%;
@@ -49,11 +41,22 @@ export default {
     }
 
     button{
-        padding: 4px 10px;
+        padding: 5px 12px;
         border-radius: 10px;
         border: none;
         background-color: #FF3737;
         color: white;
         cursor: pointer;
+    }
+
+    a{
+        text-decoration: none;
+        color: #640032;
+        font-weight: 700;
+    }
+
+    a:hover{
+        border-bottom: 1px solid #640032;
+        padding-bottom: 1px;
     }
 </style>

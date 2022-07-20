@@ -1,6 +1,8 @@
 <template>
     <div id="app">
-        <h1>Learning resources app</h1>
+        <TheHeader
+            title="Learning resources app"
+        />
         <StoredResources
             :resources="storedResources"
         />
@@ -8,10 +10,12 @@
 </template>
 
 <script>
+import TheHeader from './components/layouts/TheHeader.vue'
 import StoredResources from './components/learning-resources/StoredResources.vue';
 
 export default {
     components: {
+        TheHeader,
         StoredResources,
     },
     data(){
@@ -58,6 +62,5 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0px;
 }
 </style>

@@ -27,3 +27,8 @@ Provide dynamic props to html (app.vue)
 Create new component for stored items
     Pass him props
     Register it on App.vue
+<!-- 7 -->
+Insert card wrapper in components/UI
+    Use it as a slot
+Change the div inside card with slot's name
+Register the slot as a global to make it reusable
