@@ -1,13 +1,16 @@
 <template>
-    <ul>
-        <LearningResource
-            v-for="res in storedResources"
-            :key="res.id"
-            :title="res.title"
-            :description="res.description"
-            :link="res.link"    
-        />
-    </ul>
+    <div id="app">
+        <h1>Learning resources app</h1>
+        <ul class="resources-container">
+            <LearningResource
+                v-for="res in storedResources"
+                :key="res.id"
+                :title="res.title"
+                :description="res.description"
+                :link="res.link"    
+            />
+        </ul>
+    </div>
 </template>
 
 <script>
@@ -39,21 +42,38 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Josefin+Sans:wght@300&family=Mingzat&family=Roboto:wght@300&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
-    border: 5px solid red;
+    /* border: 5px solid red; */
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
-ul{
+#app{
+    /* border: 4px solid blue; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0px;
+}
+
+.resources-container{
+    /* border: 3px solid green; */
+    width: 80%;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding: 1rem;
+    list-style: none;
 }
 </style>
