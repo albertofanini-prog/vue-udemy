@@ -69,6 +69,8 @@ export default {
         width: 100%;
         align-self: center;
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 40px;
         padding: 1rem 1.6rem;
     }

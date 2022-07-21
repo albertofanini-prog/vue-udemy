@@ -1,6 +1,5 @@
 <template>
     <button
-        :type="type"
         :class="mode"
     >
         <slot></slot>
@@ -9,7 +8,7 @@
 
 <script>
 export default {
-    props: ['type', 'mode']
+    props: ['mode']
 }
 </script>
 
@@ -32,7 +31,7 @@ export default {
     .flat {
         background-color: transparent;
         color: #3a0061;
-        border: none;
+        border: 1px solid #3a0061;
     }
 
     .flat:hover,
