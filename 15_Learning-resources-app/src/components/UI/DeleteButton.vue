@@ -13,19 +13,21 @@ export default {
 }
 </script>
 
+
 <style scoped>
     button {
         padding: 5px 12px;
         border-radius: 10px;
         border: none;
-        background-color: #3a0061;
+        background-color: red;
         color: white;
         cursor: pointer;
     }
 
-    button:hover{
-        background-color: #edd2ff;
-        color: #3a0061;
+    button:hover,
+    button:active {
+        background-color:  #edd2ff;
+        color: red;
         font-weight: 700;
     }
 
